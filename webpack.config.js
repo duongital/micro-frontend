@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: "development",
@@ -9,7 +10,7 @@ module.exports = {
     "single-spa.config": "./single-spa.config.js"
   },
   output: {
-    publicPath: "/dist/",
+    publicPath: "/",
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
   },
@@ -42,6 +43,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Demo',
+      template: 'index.html'
+  })
   ],
   devtool: "source-map",
   externals: [],
@@ -49,6 +54,7 @@ module.exports = {
     historyApiFallback: true,
     // contentBase: path.join(__dirname, 'dist'),
     // compress: true,
-    port: 9000
+    port: 9000,
+    contentBase: './dist'
   }
 };
