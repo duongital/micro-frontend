@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
 import Home from './root.component.js';
 
+import "../design-system/index.css";
+
 function domElementGetter() {
   return document.getElementById("react")
 }
