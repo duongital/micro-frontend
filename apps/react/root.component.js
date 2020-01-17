@@ -1,4 +1,5 @@
 import React from "react";
+import Editor from "./components/Input";
 import "@vaadin/vaadin-text-field";
 import "../design-system/index.css";
 import logo from "./images/2.jpg";
@@ -20,6 +21,7 @@ const App = () => (
     <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
       Button
     </button>
+    <Editor />
   </div>
 );
 
