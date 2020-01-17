@@ -1,5 +1,4 @@
 import { registerApplication, start } from "single-spa";
-// import "./src/web-component";
 
 registerApplication(
   "vue",
