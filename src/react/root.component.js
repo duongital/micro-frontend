@@ -1,5 +1,11 @@
-import React from "react"
+import React from "react";
 
-const App = () => <h1>Hello from React</h1>
+const App = () => (
+  <div>
+    <h1>BLOG SECTION</h1>
+    <p>power by ReactJS</p>
+    <a href="/">go to home</a>
+  </div>
+);
 
-export default App
+export default App;

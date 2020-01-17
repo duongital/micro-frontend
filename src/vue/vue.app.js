@@ -1,11 +1,15 @@
 import Vue from 'vue';
 import singleSpaVue from 'single-spa-vue';
-import Hello from './main.vue'
+import store from "./src/store";
+import routes from "./src/routes";
+import Hello from './main.vue';
 
 const vueLifecycles = singleSpaVue({
   Vue,
   appOptions: {
     el: '#vue',
+    store: store,
+    router: routes,
     render: r => r(Hello)
   } 
 });
