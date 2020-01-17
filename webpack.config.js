@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -28,6 +28,17 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: "vue-loader"
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              esModule: false,
+            },
+          }
+        ]
       }
     ]
   },
@@ -44,9 +55,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Demo',
-      template: 'index.html'
-  })
+      title: "Demo",
+      template: "index.html"
+    })
   ],
   devtool: "source-map",
   externals: [],
@@ -55,6 +66,6 @@ module.exports = {
     // contentBase: path.join(__dirname, 'dist'),
     // compress: true,
     port: 9000,
-    contentBase: './dist'
+    contentBase: "./dist"
   }
 };

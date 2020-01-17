@@ -5,7 +5,7 @@ module.exports = {
       require('@fullhuman/postcss-purgecss')({ // to optimize unused css classes
         content: [
           './index.html',
-          './src/**/*.vue'
+          './apps/vue/**/*.vue'
         ]
       })
     ]

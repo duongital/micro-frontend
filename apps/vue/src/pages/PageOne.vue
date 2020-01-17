@@ -2,6 +2,7 @@
   <div>
       <h1>This is page 1</h1>
       <p>Vuex Store: {{ products }}</p>
+      <img style="width: 30%" src="../images/2.jpg"/>
       <vaadin-text-field label="Text Area Label" placeholder="Write something ..."></vaadin-text-field>
   </div>
 </template>
