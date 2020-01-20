@@ -25,7 +25,6 @@ export default {
   mounted() {
     console.log('component mounted');
     this.$refs.button.addEventListener('click', (event) => {
-      console.log('hello');
       this.bindingData = this.$refs.textfield.value;
     })
   },

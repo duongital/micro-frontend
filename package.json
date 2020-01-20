@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@graviton/button": "^1.1.9",
     "@vaadin/vaadin-button": "^2.2.2",
     "@vaadin/vaadin-text-field": "^2.5.3",
     "axios": "^0.19.1",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
