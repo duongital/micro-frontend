@@ -1,6 +1,6 @@
 import React from "react";
 import Editor from "./components/Editor";
-import "../design-system/index.css";
+import "../styles/index.css";
 import logo from "./images/2.jpg";
 
 const App = () => (

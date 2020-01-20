@@ -23,14 +23,11 @@
         Button
       </button>
     </router-link>
-    <gvt-button>Button</gvt-button>
-    <gvt-button filled>Filled Button</gvt-button>
     <vaadin-button ref="button">Vaadin Button</vaadin-button>
   </div>
 </template>
 
 <script>
-import "@graviton/button";
 import "@vaadin/vaadin-button";
 
 export default {
