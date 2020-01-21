@@ -13,6 +13,9 @@
     <p class="mb-12">vue binding: {{ bindingData }}</p>
     <mwc-button outlined label="standard"></mwc-button>
     <mwc-button raised label="raised"></mwc-button>
+    <dile-checkbox>Label for the element</dile-checkbox>
+    <br/>
+    <my-element></my-element>
   </div>
 </template>
 
@@ -21,6 +24,9 @@ import { mapGetters, mapActions, mapMutations } from "vuex";
 import "@vaadin/vaadin-text-field";
 import "@vaadin/vaadin-button";
 import "@material/mwc-button";
+// import "dile-checkbox/dile-checkbox";
+import "merisier-ui/checkbox";
+import "merisier-ui/my-element";
 
 export default {
   name: "p-one",

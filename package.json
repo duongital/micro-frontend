@@ -9,6 +9,7 @@
     "@vaadin/vaadin-button": "^2.2.2",
     "@vaadin/vaadin-text-field": "^2.5.3",
     "axios": "^0.19.1",
+    "dile-checkbox": "^2.0.1",
     "lit-element": "^2.2.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
@@ -21,7 +22,8 @@
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
-    "vuex": "^3.1.2"
+    "vuex": "^3.1.2",
+    "merisier-ui": "git://github.com/duongital/webcomponent-ui.git#5ed27f382622f1ae8a6d8e88ca428ed070098c63"
   },
   "scripts": {
     "serve": "webpack-dev-server --open",

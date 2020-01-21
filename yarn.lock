@@ -2379,6 +2379,14 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+dile-checkbox@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/dile-checkbox/-/dile-checkbox-2.0.1.tgz#42d571742cd86063f4964939782e7f17f487efff"
+  integrity sha512-607c93ZTwKRvdn1JcVW9bJuNLPajT9GDA41SjXL98kZnXkfQTTU39woHaoBm1QGS9KqeciNstfu5lUfKXMIZrA==
+  dependencies:
+    lit-element "^2.0.1"
+    lit-html "^1.0.0"
+
 dir-glob@^2.0.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/dir-glob/-/dir-glob-2.2.2.tgz#fa09f0694153c8918b18ba0deafae94769fc50c4"
@@ -3968,6 +3976,13 @@ merge-source-map@^1.1.0:
   integrity sha512-Qkcp7P2ygktpMPh2mCQZaf3jhN6D3Z/qVZHSdWvQ+2Ef5HgRAPBO57A77+ENm0CPx2+1Ce/MYKi3ymqdfuqibw==
   dependencies:
     source-map "^0.6.1"
+
+"merisier-ui@git://github.com/duongital/webcomponent-ui.git#5ed27f382622f1ae8a6d8e88ca428ed070098c63":
+  version "1.0.0"
+  resolved "git://github.com/duongital/webcomponent-ui.git#5ed27f382622f1ae8a6d8e88ca428ed070098c63"
+  dependencies:
+    lit-element "^2.2.1"
+    lit-html "^1.1.2"
 
 methods@~1.1.2:
   version "1.1.2"

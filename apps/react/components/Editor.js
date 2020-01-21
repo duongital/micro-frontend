@@ -1,5 +1,6 @@
 import React from "react";
 import "@vaadin/vaadin-text-field";
+import "merisier-ui/checkbox";
 
 export default class Editor extends React.Component {
   constructor(props) {
@@ -67,6 +68,8 @@ export default class Editor extends React.Component {
           ref="firstName"
         ></vaadin-text-field>
         <button className="btn btn-blue" ref="button">Add field</button>
+        <br/>
+        <dile-checkbox>Label for the element</dile-checkbox>
       </div>
     );
   }
