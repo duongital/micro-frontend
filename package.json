@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@graviton/button": "^1.1.9",
+    "@material/mwc-button": "^0.12.0",
     "@vaadin/vaadin-button": "^2.2.2",
     "@vaadin/vaadin-text-field": "^2.5.3",
     "axios": "^0.19.1",
