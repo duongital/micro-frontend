@@ -1,4 +1,5 @@
 import { registerApplication, start } from "single-spa";
+import "./apps/styles/index.css";
 
 registerApplication(
   "vue",

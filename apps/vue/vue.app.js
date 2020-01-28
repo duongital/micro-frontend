@@ -4,7 +4,7 @@ import store from "./src/store";
 import routes from "./src/routes";
 import Hello from './main.vue';
 
-import "../styles/index.css";
+// import "../styles/index.css";
 
 const vueLifecycles = singleSpaVue({
   Vue,
