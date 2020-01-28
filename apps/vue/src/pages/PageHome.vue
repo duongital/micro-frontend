@@ -23,7 +23,6 @@
         Button
       </button>
     </router-link>
-    <vaadin-button ref="button">Vaadin Button</vaadin-button>
     <br/>
     <p class="mt-12">button created fron btn class</p>
     <button class="btn btn-blue">BTN Button</button>
@@ -31,8 +30,6 @@
 </template>
 
 <script>
-import "@vaadin/vaadin-button";
-
 export default {
   name: "p-home",
   data() {

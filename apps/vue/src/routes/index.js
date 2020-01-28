@@ -8,26 +8,9 @@ import PageOne from "../pages/PageOne.vue";
 Vue.use(Router);
 
 const routes = new Router({
-//   mode: "history",
+  // mode: "history",
+  // hash: false,
   routes: [
-    // {
-    //   path: "/step",
-    //   name: "p-step",
-    //   component: PageSteps,
-    //   children: [
-    //     {
-    //       path: "login",
-    //       name: "login",
-    //       component: CStepLogin
-    //     },
-        
-    //     {
-    //       path: "thankyou",
-    //       name: "thankyou",
-    //       component: CStepThankYou
-    //     }
-    //   ]
-    // },
     {
       path: "/",
       name: "p-home",
@@ -38,11 +21,12 @@ const routes = new Router({
       name: "p-one",
       component: PageOne
     },
-    {
-      path: "*",
-      name: "p-not-found",
-      component: PageNotFound
-    }
+    // {
+    //   path: "*",
+    //   name: "p-not-found",
+    //   component: PageNotFound
+    // },
+    { path: '*', component: PageNotFound }
   ]
 });
 
