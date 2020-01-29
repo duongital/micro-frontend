@@ -1,6 +1,13 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { increment, decrement } from "../store/actions";
 
 const PageDashboard = () => {
+  const counter = useSelector(state => state.counter);
+  const isLogged = useSelector(state => state.isLogged);
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h2>Dashboard</h2>
@@ -15,6 +22,13 @@ const PageDashboard = () => {
         infancy. Various versions have evolved over the years, sometimes by
         accident, sometimes on purpose (injected humour and the like).
       </p>
+      <p>Hello counter: { counter }</p>
+      <p>is logged: { isLogged.toString() }</p>
+
+      <p className="mx-4 my-4">controll the counter</p>
+
+      <button className="btn btn-blue mx-12" onClick={() => dispatch(increment(5))}>+</button>
+      <button className="btn btn-blue" onClick={() => dispatch(decrement())}>-</button>
     </div>
   );
 };
