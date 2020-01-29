@@ -1,4 +1,5 @@
 import React from "react";
+
 import Editor from "../components/Editor";
 import logo from "../images/2.jpg";
 
@@ -20,8 +21,9 @@ const HomePage = () => {
       </button>
 
       <Editor />
+      
     </div>
   );
-}
+};
 
 export default HomePage;

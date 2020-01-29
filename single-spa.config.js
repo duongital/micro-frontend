@@ -10,7 +10,7 @@ registerApplication(
 registerApplication(
   "react",
   () => import("./apps/react/main.app.js"),
-  () => location.pathname === "/react"
+  () => location.pathname.includes('react')
 );
 
 start();
