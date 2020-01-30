@@ -2,7 +2,7 @@
   <div class="text-center">
     <h1>This is page 1</h1>
     <p class="mb-8">Vuex Store: {{ products }}</p>
-    <img class="mt-8" style="width: 30%; margin: auto" src="../images/2.jpg" />
+    <!-- <img class="mt-8" style="width: 30%; margin: auto" src="../images/2.jpg" /> -->
     <p class="mt-8">Render from Lit Element:</p>
     <my-input ref="textfield"></my-input>
     <p class="mb-12">vue binding: {{ bindingData }}</p>

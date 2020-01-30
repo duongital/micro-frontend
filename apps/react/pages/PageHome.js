@@ -1,7 +1,7 @@
 import React from "react";
 
 import Editor from "../components/Editor";
-import logo from "../images/2.jpg";
+// import logo from "../images/2.jpg";
 
 const HomePage = () => {
   return (
@@ -9,7 +9,7 @@ const HomePage = () => {
       <h1>BLOG SECTION</h1>
       <p>power by ReactJS</p>
       <p className="mt-12">Test render image:</p>
-      <img className="w-1/4 m-auto" src={logo} />
+      {/* <img className="w-1/4 m-auto" src={logo} /> */}
 
       <br />
       <a href="/">

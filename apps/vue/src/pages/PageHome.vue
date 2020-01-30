@@ -1,8 +1,8 @@
 <template>
   <div class="text-center">
-    <h1 class="mt-8">Home Page: {{ firstName }}</h1>
+    <h1 class="mt-8 border">Home Page: {{ firstName }}</h1>
     <p>Powered by VueJS, ReactJS, LitElement</p>
-    <p class="text-yellow-500">styled by: Tailwind CSS</p>
+    <p class="text-orange-500">styled by: Tailwind CSS</p>
     <br />
     <a href="/react"
       >go to ReactJS

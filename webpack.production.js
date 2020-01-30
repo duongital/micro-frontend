@@ -1,3 +1,9 @@
+// LOAD LOCAL ENVIRONMENT VARIABLES
+const dotenv = require("dotenv").config({
+  path: ".env.production"
+});
+
+// LOAD LIBRARIES
 const path = require("path");
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -5,7 +11,7 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
     "single-spa.config": "./single-spa.config.js"
   },
@@ -35,8 +41,8 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              esModule: false,
-            },
+              esModule: false
+            }
           }
         ]
       }

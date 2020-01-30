@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.1",
+    "merisier-web-component": "git://github.com/duongital/merisier-web-component.git#eaf3567f3daff80b74cd550c93719f689677ffbf",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.8.6",
@@ -20,12 +21,11 @@
     "tailwindcss": "^1.1.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
-    "vuex": "^3.1.2",
-    "merisier-web-component": "git://github.com/duongital/merisier-web-component.git#eaf3567f3daff80b74cd550c93719f689677ffbf"
+    "vuex": "^3.1.2"
   },
   "scripts": {
-    "serve": "webpack-dev-server --open",
-    "build": "webpack --config webpack.config.js -p"
+    "serve": "webpack-dev-server --config webpack.local.js --open",
+    "build": "webpack --config webpack.production.js -p"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -34,11 +34,12 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "@fullhuman/postcss-purgecss": "^2.0.5",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.0.0",
+    "dotenv": "^8.2.0",
     "file-loader": "^5.0.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
