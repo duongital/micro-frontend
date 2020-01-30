@@ -2,9 +2,17 @@
 
 ### Components
 
-- React JS
-- Vue JS
-- Lit Element (getting from Merisier Web Component repo)
+1. React JS
+    - Component with Hooks
+    - State management with Redux
+    - Route with react-router
+
+2. Vue JS
+    - Component with vue-loader
+    - State management with Vuex
+    - Router with vue-router
+    
+3. Lit Element (getting from Merisier Web Component repo)
 
 ### Styles
 
