@@ -4,20 +4,17 @@
     <p class="mb-8">Vuex Store: {{ products }}</p>
     <img class="mt-8" style="width: 30%; margin: auto" src="../images/2.jpg" />
     <p class="mt-8">Render from Lit Element:</p>
-    <vaadin-text-field
-      ref="textfield"
-      label="Text Area Label"
-      placeholder="Write something ..."
-    ></vaadin-text-field>
+    <my-input ref="textfield"></my-input>
     <p class="mb-12">vue binding: {{ bindingData }}</p>
     <dile-rounded-button ref="button">Click Here</dile-rounded-button>
-    <br/>
+    <br />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions, mapMutations } from "vuex";
-import "@vaadin/vaadin-text-field";
+
+import "merisier-web-component/my-input";
 import "merisier-web-component/dile-rounded-button";
 
 export default {
@@ -29,7 +26,7 @@ export default {
   },
   mounted() {
     this.$refs.button.addEventListener("click", event => {
-      this.bindingData = this.$refs.textfield.value;
+      this.bindingData = this.$refs.textfield.prop1;
     });
   },
   computed: {

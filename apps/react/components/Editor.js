@@ -1,5 +1,5 @@
 import React from "react";
-import "@vaadin/vaadin-text-field";
+import "merisier-web-component/my-input";
 
 export default class Editor extends React.Component {
   constructor(props) {
@@ -14,12 +14,10 @@ export default class Editor extends React.Component {
     //   textareaValue: event.target.value
     // });
     // this.refs.firstName.value = event.target.value;
-
     // binding from Web Component to React
     // this.setState({
     //   textareaValue: this.refs.firstName.value
     // });
-
   }
   handleOnSubmit(event) {
     event.preventDefault();
@@ -32,19 +30,19 @@ export default class Editor extends React.Component {
     });
   }
   componentDidMount() {
-    console.log('mounted');
-    this.refs.button.addEventListener('click', (event) => {
+    console.log("mounted");
+    this.refs.button.addEventListener("click", event => {
       this.setState({
         textareaValue: this.refs.firstName.value
-      })
-    })
+      });
+    });
   }
 
   render() {
     return (
       <div>
         <p className="mt-12">binding: {this.state.textareaValue}</p>
-        
+
         {/*
         <form onSubmit={event => this.handleOnSubmit(event)}>
           <p className="mt-12">Text area:</p>
@@ -59,15 +57,13 @@ export default class Editor extends React.Component {
           <input className="btn btn-blue" type="submit" value="Save" />
         </form>
          */}
-         
+
         <p className="mt-12">Test native component:</p>
-        <vaadin-text-field
-          label="Input Field"
-          placeholder="Write here ..."
-          ref="firstName"
-        ></vaadin-text-field>
-        <button className="btn btn-blue" ref="button">Add field</button>
-        <br/>
+        <my-input ref="firstName"></my-input>
+        <button className="btn btn-blue" ref="button">
+          Add field
+        </button>
+        <br />
       </div>
     );
   }
