@@ -1,17 +1,10 @@
-// LOAD LOCAL ENVIRONMENT VARIABLES
-const dotenv = require("dotenv").config({
-  path: ".env.local"
-});
-
-// LOAD LIBRARIES
 const path = require("path");
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
-  mode: "development",
+config = {
   entry: {
     "single-spa.config": "./single-spa.config.js"
   },
@@ -30,6 +23,11 @@ module.exports = {
         test: /\.js$/,
         exclude: [path.resolve(__dirname, "node_modules")],
         loader: "babel-loader"
+      },
+      {
+        test: /\.html$/,
+        exclude: /node_modules|svelte/,
+        loader: "html-loader"
       },
       {
         test: /\.vue$/,
@@ -65,13 +63,7 @@ module.exports = {
       template: "index.html"
     })
   ],
-  devtool: "source-map",
   externals: [],
-  devServer: {
-    historyApiFallback: true,
-    // contentBase: path.join(__dirname, 'dist'),
-    // compress: true,
-    port: 9000,
-    contentBase: "./dist"
-  }
 };
+
+module.exports = config;

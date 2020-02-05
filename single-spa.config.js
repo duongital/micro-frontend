@@ -13,4 +13,10 @@ registerApplication(
   () => location.pathname.includes('react')
 );
 
+registerApplication(
+  "angular",
+  () => import("./apps/angular/angular.app.js"),
+  () => location.pathname.includes('angular')
+)
+
 start();
