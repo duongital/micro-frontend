@@ -19,4 +19,10 @@ registerApplication(
   () => location.pathname.includes('angular')
 )
 
+registerApplication(
+  "mihq",
+  () => import("./apps/angular-mihq/angular.app.js"),
+  () => location.pathname.includes('mihq')
+)
+
 start();
