@@ -1,9 +1,9 @@
 import angular from 'angular';
-import template from './root.template.html';
+import template from './root.template.jade';
 import {showFrameworkObservable, getBorder} from '../common/colored-border.js';
 
 angular
-.module('single-spa-app')
+.module('merisier')
 .component('root', {
   template,
   controllerAs: 'vm',

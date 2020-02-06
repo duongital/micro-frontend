@@ -1,0 +1,31 @@
+@media only screen and (max-width: $mediumbreak - 1) {
+    #content {
+        .cartsteps {
+            ul.steps {
+                li {
+                    a {
+                        margin-right: 20px;
+                    }
+                }
+
+                //only show label of active cartstep
+                li:not(.active) {
+                    vertical-align: middle;
+
+                    a {
+                        width: 35px;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    .hidemobile {
+        display: none;
+    }
+    
+    .promotionbox {
+        height: $promotionboxheight * 1.7;
+    }
+}

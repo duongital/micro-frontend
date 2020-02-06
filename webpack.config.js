@@ -43,6 +43,10 @@ config = {
             }
           }
         ]
+      },
+      {
+        test: /\.jade/,
+        use: ["raw-loader", "pug-html-loader"]
       }
     ]
   },
@@ -63,7 +67,7 @@ config = {
       template: "index.html"
     })
   ],
-  externals: [],
+  externals: []
 };
 
 module.exports = config;

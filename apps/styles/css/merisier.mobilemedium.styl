@@ -1,0 +1,73 @@
+@media only screen and (max-width: $largebreak - 1) {
+
+    // --- mobile nav styles ---
+    body,
+    html {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    html {
+      overflow-y: scroll;
+    }
+
+    #container {
+        transition: left 0.5s;
+        top: 0;
+        left: 0;
+        width: 100.2%; // slightly smaller than 100, otherwise there are white artifacts
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .navopen {
+        #mobilenav {
+            left: 0;
+        }
+
+        #container {
+            top: 0;
+            left: $mobilenavwidth;
+            overflow: hidden;
+        }
+    }
+
+
+    .cartopen {
+        #mobilecart {
+            right: 0;
+        }
+
+        #container {
+            top: 0;
+            left: - $mobilenavwidth;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    // --- mobile nav styles end ---
+
+    #modal {
+        &.ng-enter {
+            opacity: 1;
+            left: 100%;
+        }
+
+        &.ng-leave {
+            left: 0;
+        }
+    }
+
+    .showmediummobile {
+        display: block;
+    }
+
+    .hidemediummobile {
+        display: none;
+    }
+
+    .stage:before, .stripe:before {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}

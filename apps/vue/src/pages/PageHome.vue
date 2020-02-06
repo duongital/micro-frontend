@@ -4,8 +4,8 @@
     <p>Powered by VueJS, ReactJS, LitElement</p>
     <p class="text-orange-500">styled by: Tailwind CSS</p>
     <br />
-    <a href="/angularjs"
-      >go to Angular JS
+    <a href="/merisier"
+      >go to Merisier Recommendation
       <button
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >

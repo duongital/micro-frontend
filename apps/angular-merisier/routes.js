@@ -1,7 +1,7 @@
 import angular from "angular";
 import "./root.component.js";
 
-angular.module("single-spa-app").config([
+angular.module("merisier").config([
   "$stateProvider",
   "$locationProvider",
   ($stateProvider, $locationProvider) => {
@@ -11,7 +11,7 @@ angular.module("single-spa-app").config([
     });
 
     $stateProvider.state("root", {
-      url: "/mihq",
+      url: "/merisier",
       template: "<root />"
     });
   }

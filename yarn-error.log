@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/duongital/.nvm/versions/node/v10.15.3/bin/node /usr/local/bin/yarn install
+  /Users/duongital/.nvm/versions/node/v10.15.3/bin/node /usr/local/bin/yarn add -D pub-html-loader
 
 PATH: 
   /Users/duongital/.nvm/versions/node/v10.15.3/bin:/Users/duongital/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/duongital/.nvm/versions/node/v10.15.3/bin:/Users/duongital/go/bin:/Users/duongital/flutter/sdk/bin:/Users/duongital/flutter/dart-sdk/bin:/Users/duongital/flutter/sdk/bin:/Users/duongital/flutter/dart-sdk/bin
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/duongital/javascript/demo/micro-frontend/micro-frontend/package.json: Unexpected token } in JSON at position 791
-      at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:304:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:315:13
+  Error: https://registry.yarnpkg.com/pub-html-loader: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66926:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140564:22)
+      at Request.emit (events.js:189:13)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141536:10)
+      at Request.emit (events.js:189:13)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141458:12)
+      at Object.onceWrapper (events.js:277:13)
+      at IncomingMessage.emit (events.js:194:15)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
@@ -28,8 +33,10 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "dependencies": {
-      "@vaadin/vaadin-text-field": "^2.5.3",
+      "angular": "^1.7.9",
+      "angular-ui-router": "^1.0.25",
       "axios": "^0.19.1",
+      "merisier-web-component": "git://github.com/duongital/merisier-web-component.git#eaf3567f3daff80b74cd550c93719f689677ffbf",
       "postcss-import": "^12.0.1",
       "postcss-loader": "^3.0.0",
       "react": "^16.8.6",
@@ -39,18 +46,18 @@ npm manifest:
       "react-router-dom": "^5.0.1",
       "react-transition-group": "^4.1.1",
       "redux": "^4.0.5",
+      "rx": "^4.1.0",
       "single-spa": "^4.3.4",
+      "single-spa-angularjs": "^3.1.0",
       "single-spa-react": "^2.10.2",
       "single-spa-vue": "^1.4.0",
-      "tailwindcss": "^1.1.4",
       "vue": "^2.6.11",
       "vue-router": "^3.1.5",
-      "vuex": "^3.1.2",
-      "merisier-web-component": "git://github.com/duongital/merisier-web-component.git#b9400ccbcfe74cb6ed3a17db6370e35e4132e47b",
+      "vuex": "^3.1.2"
     },
     "scripts": {
-      "serve": "webpack-dev-server --open",
-      "build": "webpack --config webpack.config.js -p"
+      "serve": "webpack-dev-server --config webpack.development.js",
+      "build": "webpack --config webpack.production.js -p"
     },
     "devDependencies": {
       "@babel/core": "^7.4.5",
@@ -59,15 +66,18 @@ npm manifest:
       "@babel/plugin-syntax-dynamic-import": "^7.2.0",
       "@babel/preset-env": "^7.4.5",
       "@babel/preset-react": "^7.0.0",
-      "@fullhuman/postcss-purgecss": "^1.3.0",
+      "@fullhuman/postcss-purgecss": "^2.0.5",
+      "autoprefixer": "^9.7.4",
       "babel-loader": "^8.0.6",
       "clean-webpack-plugin": "^3.0.0",
       "copy-webpack-plugin": "^5.1.1",
       "css-loader": "^3.0.0",
+      "dotenv": "^8.2.0",
       "file-loader": "^5.0.2",
       "html-loader": "^0.5.5",
       "html-webpack-plugin": "^3.2.0",
       "style-loader": "^0.23.1",
+      "tailwindcss": "^1.1.4",
       "vue-loader": "^15.7.0",
       "vue-template-compiler": "^2.6.10",
       "webpack": "^4.34.0",
@@ -883,51 +893,13 @@ Lockfile:
       lodash "^4.17.13"
       to-fast-properties "^2.0.0"
   
-  "@fullhuman/postcss-purgecss@^1.3.0":
-    version "1.3.0"
-    resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-1.3.0.tgz#d632900d818f4fcf4678e7326923fb838c3e03a7"
-    integrity sha512-zvfS3dPKD2FAtMcXapMJXGbDgEp9E++mLR6lTgSruv6y37uvV5xJ1crVktuC1gvnmMwsa7Zh1m05FeEiz4VnIQ==
+  "@fullhuman/postcss-purgecss@^2.0.5":
+    version "2.0.5"
+    resolved "https://registry.yarnpkg.com/@fullhuman/postcss-purgecss/-/postcss-purgecss-2.0.5.tgz#01ea0ac16ecc7ae8b24a4bcb6ef9f200765c7216"
+    integrity sha512-lWSnRiLfI3dGowZkPBfFOVkWlBP+Wk12u91mtjCTmA3hJ+d5+MyizVsTAOB1e52QJww6BRSD4g6XpknF+dEPnA==
     dependencies:
-      postcss "^7.0.14"
-      purgecss "^1.4.0"
-  
-  "@polymer/iron-flex-layout@^3.0.0-pre.26":
-    version "3.0.1"
-    resolved "https://registry.yarnpkg.com/@polymer/iron-flex-layout/-/iron-flex-layout-3.0.1.tgz#36f9e1a8eb792d279b2bc75d362628721ad37f0c"
-    integrity sha512-7gB869czArF+HZcPTVSgvA7tXYFze9EKckvM95NB7SqYF+NnsQyhoXgKnpFwGyo95lUjUW9TFDLUwDXnCYFtkw==
-    dependencies:
-      "@polymer/polymer" "^3.0.0"
-  
-  "@polymer/iron-icon@^3.0.0":
-    version "3.0.1"
-    resolved "https://registry.yarnpkg.com/@polymer/iron-icon/-/iron-icon-3.0.1.tgz#93211c39d8825fe4965a68419566036c1df291eb"
-    integrity sha512-QLPwirk+UPZNaLnMew9VludXA4CWUCenRewgEcGYwdzVgDPCDbXxy6vRJjmweZobMQv/oVLppT2JZtJFnPxX6g==
-    dependencies:
-      "@polymer/iron-flex-layout" "^3.0.0-pre.26"
-      "@polymer/iron-meta" "^3.0.0-pre.26"
-      "@polymer/polymer" "^3.0.0"
-  
-  "@polymer/iron-iconset-svg@^3.0.0":
-    version "3.0.1"
-    resolved "https://registry.yarnpkg.com/@polymer/iron-iconset-svg/-/iron-iconset-svg-3.0.1.tgz#568d6e7dbc120299dae63be3600aeba0d30ddbea"
-    integrity sha512-XNwURbNHRw6u2fJe05O5fMYye6GSgDlDqCO+q6K1zAnKIrpgZwf2vTkBd5uCcZwsN0FyCB3mvNZx4jkh85dRDw==
-    dependencies:
-      "@polymer/iron-meta" "^3.0.0-pre.26"
-      "@polymer/polymer" "^3.0.0"
-  
-  "@polymer/iron-meta@^3.0.0-pre.26":
-    version "3.0.1"
-    resolved "https://registry.yarnpkg.com/@polymer/iron-meta/-/iron-meta-3.0.1.tgz#7f140628d127b0a284f882f1bb323a261bc125f5"
-    integrity sha512-pWguPugiLYmWFV9UWxLWzZ6gm4wBwQdDy4VULKwdHCqR7OP7u98h+XDdGZsSlDPv6qoryV/e3tGHlTIT0mbzJA==
-    dependencies:
-      "@polymer/polymer" "^3.0.0"
-  
-  "@polymer/polymer@^3.0.0":
-    version "3.3.1"
-    resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.3.1.tgz#9ad48992d2a96775f80b0673f3a615d6df8a3dfc"
-    integrity sha512-8KaB48tzyMjdsHdxo5KvCAaqmTe7rYDzQAoj/pyEfq9Fp4YfUaS+/xqwYj0GbiDAUNzwkmEQ7dw9cgnRNdKO8A==
-    dependencies:
-      "@webcomponents/shadycss" "^1.9.1"
+      postcss "7.0.26"
+      purgecss "^2.0.5"
   
   "@types/anymatch@*":
     version "1.3.1"
@@ -996,69 +968,10 @@ Lockfile:
       "@types/webpack-sources" "*"
       source-map "^0.6.0"
   
-  "@vaadin/vaadin-control-state-mixin@^2.1.1":
-    version "2.1.3"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-control-state-mixin/-/vaadin-control-state-mixin-2.1.3.tgz#509998350611651acfa8db1506fc12d925861b48"
-    integrity sha512-EtLfMN9i/gwToAEuW6E1OA2Q2i/4a+Il6tKkqE/0i7bgu3Xr1IITMcagQn9QSsp1Xkpr/nLtWWKRq7yZZkbHVg==
-    dependencies:
-      "@polymer/polymer" "^3.0.0"
-  
-  "@vaadin/vaadin-development-mode-detector@^2.0.0":
-    version "2.0.4"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-development-mode-detector/-/vaadin-development-mode-detector-2.0.4.tgz#f49c8009856bead92d248377c36b295b5aae78e5"
-    integrity sha512-S+PaFrZpK8uBIOnIHxjntTrgumd5ztuCnZww96ydGKXgo9whXfZsbMwDuD/102a/IuPUMyF+dh/n3PbWzJ6igA==
-  
-  "@vaadin/vaadin-element-mixin@^2.0.0":
-    version "2.3.0"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-element-mixin/-/vaadin-element-mixin-2.3.0.tgz#535591e99cdc433a9c4e19d9861d280f6705ea5b"
-    integrity sha512-9gQb6Y3c/KlkJkITr+JncBZQ3iAjLpU/B6Ykeis+AHjPn6p+f4x3xsJ09IJKtb5YqD5wy9Zu7ANdM++97abQ2g==
-    dependencies:
-      "@polymer/polymer" "^3.0.0"
-      "@vaadin/vaadin-development-mode-detector" "^2.0.0"
-      "@vaadin/vaadin-usage-statistics" "^2.1.0"
-  
-  "@vaadin/vaadin-lumo-styles@^1.2.0":
-    version "1.6.0"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-lumo-styles/-/vaadin-lumo-styles-1.6.0.tgz#4b682f3a073054f8950ef460dda9cb4555372113"
-    integrity sha512-MTJ2JssEVF3Go5b+zIe86Jw8nNtaN91wHmO2Ic1eI27PEJ5dRRGcLWX9CjTEx/8Zu9+3Fk4YeVP9ABWhiZZGUw==
-    dependencies:
-      "@polymer/iron-icon" "^3.0.0"
-      "@polymer/iron-iconset-svg" "^3.0.0"
-      "@polymer/polymer" "^3.0.0"
-  
-  "@vaadin/vaadin-material-styles@^1.2.0":
-    version "1.3.2"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-material-styles/-/vaadin-material-styles-1.3.2.tgz#d2c1bd290db16721152ae672dbe052c381686696"
-    integrity sha512-EFrvGScoxhLNrPnWtT2Ia77whjF2TD4jrcyeh1jv9joCA2n5SUba+4XJciVSGmopqqQato6lwRnZSvMLJX7cyw==
-    dependencies:
-      "@polymer/polymer" "^3.0.0"
-  
-  "@vaadin/vaadin-text-field@^2.5.3":
-    version "2.5.3"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-text-field/-/vaadin-text-field-2.5.3.tgz#ce1fb9915d3a88f03da2f60888e99a2b1dd8cfa2"
-    integrity sha512-jWCaKA0KLeb6v2R823Bk7V0jB1qLIAoG/z/wHzkkfqGwzvluBZJ9azri3sRuUZveALIrk4cU1qkfzo8GkppHuw==
-    dependencies:
-      "@polymer/polymer" "^3.0.0"
-      "@vaadin/vaadin-control-state-mixin" "^2.1.1"
-      "@vaadin/vaadin-element-mixin" "^2.0.0"
-      "@vaadin/vaadin-lumo-styles" "^1.2.0"
-      "@vaadin/vaadin-material-styles" "^1.2.0"
-      "@vaadin/vaadin-themable-mixin" "^1.2.1"
-  
-  "@vaadin/vaadin-themable-mixin@^1.2.1":
-    version "1.5.2"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-themable-mixin/-/vaadin-themable-mixin-1.5.2.tgz#3fc4ec1180f8032c8025fe70053deacbeffd7f62"
-    integrity sha512-3EsVOhE5lo/nRyX27+nOyPNsV5TtKInTKirldUqucGZZtcyWT4ZxqAxswIz3bAolnb17UDb8eJKHOH6ERMLEhg==
-    dependencies:
-      "@polymer/polymer" "^3.0.0"
-      lit-element "^2.0.0"
-  
-  "@vaadin/vaadin-usage-statistics@^2.1.0":
-    version "2.1.0"
-    resolved "https://registry.yarnpkg.com/@vaadin/vaadin-usage-statistics/-/vaadin-usage-statistics-2.1.0.tgz#9c0fd71dded80f401bcdfbcb3f45b5640fc4256d"
-    integrity sha512-e81nbqY5zsaYhLJuOVkJkB/Um1pGK5POIqIlTNhUfjeoyGaJ63tiX8+D5n6F+GgVxUTLUarsKa6SKRcQel0AzA==
-    dependencies:
-      "@vaadin/vaadin-development-mode-detector" "^2.0.0"
+  "@uirouter/core@6.0.4":
+    version "6.0.4"
+    resolved "https://registry.yarnpkg.com/@uirouter/core/-/core-6.0.4.tgz#fcdc75ab10f1035176acf87a27d9d27a0101ecf9"
+    integrity sha512-TQ9XOzZY+jmWKkU4993MAEBIy7Bs3kijDzj+A6RHR8gq/3UoQm3Q/l1igfao5GZyBjid7eRVeipPK14ovCYQ3g==
   
   "@vue/component-compiler-utils@^3.1.0":
     version "3.1.1"
@@ -1221,11 +1134,6 @@ Lockfile:
       "@webassemblyjs/wast-parser" "1.8.5"
       "@xtuc/long" "4.2.2"
   
-  "@webcomponents/shadycss@^1.9.1":
-    version "1.9.4"
-    resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.9.4.tgz#4f9d8ea1526bab084c60b53d4854dc39fdb2bb48"
-    integrity sha512-tgNcVEaKssyeZPbUBjVQf4aryO5Fi7fxRvOxV982ZJuRVDcefmIblBh0SXAbcvAAlQ2zpNEP4SuQUnr8uApIpw==
-  
   "@xtuc/ieee754@^1.2.0":
     version "1.2.0"
     resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -1268,6 +1176,18 @@ Lockfile:
       fast-json-stable-stringify "^2.0.0"
       json-schema-traverse "^0.4.1"
       uri-js "^4.2.2"
+  
+  angular-ui-router@^1.0.25:
+    version "1.0.25"
+    resolved "https://registry.yarnpkg.com/angular-ui-router/-/angular-ui-router-1.0.25.tgz#eef614dcf0fcca3a9a29b6e0591d90f93453846d"
+    integrity sha512-NCjwfGWQiqBx22OyAm6hsAWvlo431uUlY2ccg9kXkvb3zCLQGSJ6pGo1AGLtRAKdZvrEHiIExhawyrVPkYp0VA==
+    dependencies:
+      "@uirouter/core" "6.0.4"
+  
+  angular@^1.7.9:
+    version "1.7.9"
+    resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.9.tgz#e52616e8701c17724c3c238cfe4f9446fd570bc4"
+    integrity sha512-5se7ZpcOtu0MBFlzGv5dsM1quQDoDeUTwZrWjGtTNA7O88cD8TEk5IEKCTDa3uECV9XnvKREVUr7du1ACiWGFQ==
   
   ansi-colors@^3.0.0:
     version "3.2.4"
@@ -1412,7 +1332,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
     integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
   
-  autoprefixer@^9.4.5:
+  autoprefixer@^9.4.5, autoprefixer@^9.7.4:
     version "9.7.4"
     resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.7.4.tgz#f8bf3e06707d047f0641d87aee8cfb174b2a5378"
     integrity sha512-g0Ya30YrMBAEZk60lp+qfX5YQllG+S5W3GYCFvyHTvhOki0AEQJLPEcIuGRsqVwLi8FvXPVtwTGhfr38hVpm0g==
@@ -1751,10 +1671,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
     integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
   
-  caniuse-lite@^1.0.30001017, caniuse-lite@^1.0.30001020:
+  caniuse-lite@^1.0.30001017:
     version "1.0.30001021"
     resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001021.tgz#e75ed1ef6dbadd580ac7e7720bb16f07b083f254"
     integrity sha512-wuMhT7/hwkgd8gldgp2jcrUjOU9RXJ4XxGumQeOsUr91l3WwmM68Cpa/ymCnWEDqakwFXhuDQbaKNHXBPgeE9g==
+  
+  caniuse-lite@^1.0.30001020:
+    version "1.0.30001023"
+    resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001023.tgz#b82155827f3f5009077bdd2df3d8968bcbcc6fc4"
+    integrity sha512-C5TDMiYG11EOhVOA62W1p3UsJ2z4DsHtMBQtjzp3ZsUglcQn62WOUgW0y795c7A5uZ+GCEIvzkMatLIlAsbNTA==
   
   chalk@2.4.2, chalk@^2.0.0, chalk@^2.4.1, chalk@^2.4.2:
     version "2.4.2"
@@ -1881,6 +1806,11 @@ Lockfile:
     version "2.20.3"
     resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
     integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
+  
+  commander@^4.0.0:
+    version "4.1.0"
+    resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.0.tgz#545983a0603fe425bc672d66c9e3c89c42121a83"
+    integrity sha512-NIQrwvv9V39FHgGFm36+U9SMQzbiHvU79k+iADraJTpmrFFfx7Ds0IvDoAdZsDrknlkRk14OYoWXb57uTh7/sw==
   
   commander@~2.19.0:
     version "2.19.0"
@@ -2382,6 +2312,11 @@ Lockfile:
     dependencies:
       dom-serializer "0"
       domelementtype "1"
+  
+  dotenv@^8.2.0:
+    version "8.2.0"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+    integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   
   duplexify@^3.4.2, duplexify@^3.6.0:
     version "3.7.1"
@@ -2907,7 +2842,7 @@ Lockfile:
       is-glob "^3.1.0"
       path-dirname "^1.0.0"
   
-  glob@^7.0.3, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
+  glob@^7.0.0, glob@^7.0.3, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
     version "7.1.6"
     resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
     integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -3723,7 +3658,7 @@ Lockfile:
     dependencies:
       leven "^3.1.0"
   
-  lit-element@^2.0.0:
+  lit-element@^2.2.1:
     version "2.2.1"
     resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.2.1.tgz#79c94d8cfdc2d73b245656e37991bd1e4811d96f"
     integrity sha512-ipDcgQ1EpW6Va2Z6dWm79jYdimVepO5GL0eYkZrFvdr0OD/1N260Q9DH+K5HXHFrRoC7dOg+ZpED2XE0TgGdXw==
@@ -3891,6 +3826,12 @@ Lockfile:
     integrity sha512-Qkcp7P2ygktpMPh2mCQZaf3jhN6D3Z/qVZHSdWvQ+2Ef5HgRAPBO57A77+ENm0CPx2+1Ce/MYKi3ymqdfuqibw==
     dependencies:
       source-map "^0.6.1"
+  
+  "merisier-web-component@git://github.com/duongital/merisier-web-component.git#eaf3567f3daff80b74cd550c93719f689677ffbf":
+    version "1.0.0"
+    resolved "git://github.com/duongital/merisier-web-component.git#eaf3567f3daff80b74cd550c93719f689677ffbf"
+    dependencies:
+      lit-element "^2.2.1"
   
   methods@~1.1.2:
     version "1.1.2"
@@ -4630,6 +4571,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.0.2.tgz#482282c09a42706d1fc9a069b73f44ec08391dc9"
     integrity sha512-LmeoohTpp/K4UiyQCwuGWlONxXamGzCMtFxLq4W1nZVGIQLYvMCJx3yAF9qyyuFpflABI9yVdtJAqbihOsCsJQ==
   
+  postcss@7.0.26, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.11, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.18, postcss@^7.0.21, postcss@^7.0.23, postcss@^7.0.26, postcss@^7.0.5, postcss@^7.0.6:
+    version "7.0.26"
+    resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.26.tgz#5ed615cfcab35ba9bbb82414a4fa88ea10429587"
+    integrity sha512-IY4oRjpXWYshuTDFxMVkJDtWIk2LhsTlu8bZnbEJA4+bYT16Lvpo8Qv6EvDumhYRgzjZl489pmsY3qVgJQ08nA==
+    dependencies:
+      chalk "^2.4.2"
+      source-map "^0.6.1"
+      supports-color "^6.1.0"
+  
   postcss@^6.0.9:
     version "6.0.23"
     resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
@@ -4638,15 +4588,6 @@ Lockfile:
       chalk "^2.4.1"
       source-map "^0.6.1"
       supports-color "^5.4.0"
-  
-  postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.11, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.18, postcss@^7.0.21, postcss@^7.0.23, postcss@^7.0.26, postcss@^7.0.5, postcss@^7.0.6:
-    version "7.0.26"
-    resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.26.tgz#5ed615cfcab35ba9bbb82414a4fa88ea10429587"
-    integrity sha512-IY4oRjpXWYshuTDFxMVkJDtWIk2LhsTlu8bZnbEJA4+bYT16Lvpo8Qv6EvDumhYRgzjZl489pmsY3qVgJQ08nA==
-    dependencies:
-      chalk "^2.4.2"
-      source-map "^0.6.1"
-      supports-color "^6.1.0"
   
   prettier@^1.18.2:
     version "1.19.1"
@@ -4765,15 +4706,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
     integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
   
-  purgecss@^1.4.0:
-    version "1.4.2"
-    resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-1.4.2.tgz#67ab50cb4f5c163fcefde56002467c974e577f41"
-    integrity sha512-hkOreFTgiyMHMmC2BxzdIw5DuC6kxAbP/gGOGd3MEsF3+5m69rIvUEPaxrnoUtfODTFKe9hcXjGwC6jcjoyhOw==
+  purgecss@^2.0.5:
+    version "2.0.5"
+    resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-2.0.5.tgz#b7aa3e3634704aa041d03f007504c303e8c6586e"
+    integrity sha512-VwQoDXImH0pabZ6ivLPCsWuRGd979NEzACaT/P3pWzDVCwHXSgXUM4QDbnMklMawU0r4MrCvdaORM84KJvsCIA==
     dependencies:
-      glob "^7.1.3"
-      postcss "^7.0.14"
-      postcss-selector-parser "^6.0.0"
-      yargs "^14.0.0"
+      commander "^4.0.0"
+      glob "^7.0.0"
+      postcss "7.0.26"
+      postcss-selector-parser "^6.0.2"
   
   qs@6.7.0:
     version "6.7.0"
@@ -5155,6 +5096,11 @@ Lockfile:
     dependencies:
       aproba "^1.1.1"
   
+  rx@^4.1.0:
+    version "4.1.0"
+    resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
+    integrity sha1-pfE/957zt0D+MKqAP7CfmIBdR4I=
+  
   safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
     version "5.1.2"
     resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -5330,6 +5276,11 @@ Lockfile:
     version "3.0.2"
     resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
     integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
+  
+  single-spa-angularjs@^3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/single-spa-angularjs/-/single-spa-angularjs-3.1.0.tgz#93df3fe064cc16b3de40f94aee23648d2d2eba5e"
+    integrity sha512-tBI30El6T8o+DqDYxLpea2ZwFt700FuS9KQnYOHZ/2LGuOkTWjx57ilRSziGkua2lcw3DFLaAHl+OFJBqekp4w==
   
   single-spa-react@^2.10.2:
     version "2.11.0"
@@ -6249,14 +6200,6 @@ Lockfile:
       camelcase "^5.0.0"
       decamelize "^1.2.0"
   
-  yargs-parser@^15.0.0:
-    version "15.0.0"
-    resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-15.0.0.tgz#cdd7a97490ec836195f59f3f4dbe5ea9e8f75f08"
-    integrity sha512-xLTUnCMc4JhxrPEPUYD5IBR1mWCK/aT6+RJ/K29JY2y1vD+FhtgKK0AXRWvI262q3QSffAQuTouFIKUuHX89wQ==
-    dependencies:
-      camelcase "^5.0.0"
-      decamelize "^1.2.0"
-  
   yargs@12.0.5:
     version "12.0.5"
     resolved "https://registry.yarnpkg.com/yargs/-/yargs-12.0.5.tgz#05f5997b609647b64f66b81e3b4b10a368e7ad13"
@@ -6291,20 +6234,3 @@ Lockfile:
       which-module "^2.0.0"
       y18n "^4.0.0"
       yargs-parser "^13.1.0"
-  
-  yargs@^14.0.0:
-    version "14.2.2"
-    resolved "https://registry.yarnpkg.com/yargs/-/yargs-14.2.2.tgz#2769564379009ff8597cdd38fba09da9b493c4b5"
-    integrity sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
-    dependencies:
-      cliui "^5.0.0"
-      decamelize "^1.2.0"
-      find-up "^3.0.0"
-      get-caller-file "^2.0.1"
-      require-directory "^2.1.1"
-      require-main-filename "^2.0.0"
-      set-blocking "^2.0.0"
-      string-width "^3.0.0"
-      which-module "^2.0.0"
-      y18n "^4.0.0"
-      yargs-parser "^15.0.0"

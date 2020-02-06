@@ -14,7 +14,7 @@ const domElementGetter = () => document.getElementById('mihq');
 const angularLifecycles = singleSpaAngularJS({
   angular,
   domElementGetter,
-  mainAngularModule: 'single-spa-app',
+  mainAngularModule: 'merisier',
   uiRouter: true,
   // angular-ui-router references `window.angular` :(, so we have to preserve the window.angular global
   preserveGlobal: true,

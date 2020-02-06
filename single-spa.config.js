@@ -21,8 +21,8 @@ registerApplication(
 
 registerApplication(
   "mihq",
-  () => import("./apps/angular-mihq/angular.app.js"),
-  () => location.pathname.includes('mihq')
+  () => import("./apps/angular-merisier/angular.app.js"),
+  () => location.pathname.includes('merisier')
 )
 
 start();

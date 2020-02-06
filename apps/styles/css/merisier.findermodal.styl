@@ -1,0 +1,301 @@
+#modalcontent.findermodal, #businessrecommendations .finder {
+
+    .supertitle {
+        padding-top: 20px;
+    }
+
+    .infobox {
+        background-color: $gold15;
+        height: 40px;
+        padding-left: 20px;
+        font: $findermodalinfoboxfont;
+        color: $gold100;
+
+        .infotitlerow {
+          height: 100%;
+
+          div {
+            float: left;
+            margin-right: 5px;
+
+            &.icon-info {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+
+            &.infotitle {
+                font-weight: $gotham_bold;
+                text-transform: uppercase;
+                margin-top: 12px;
+            }
+          }
+        }
+
+        .infotext {
+            color: $gold100;
+            margin-top: 12px;
+        }
+
+        .textactions {
+            float: left;
+            margin-top: 12px;
+
+            .action {
+                color: $gold100;
+            }
+        }
+
+        .inset, .insetcontent {
+            float: left;
+            padding: 0 0 5px 0;
+            margin-left: -7px;
+            background-color: $gold15;
+
+            .largeinfotext {
+                margin-left: 20px;
+                color: $gold100;
+                padding-left: 20px;
+                margin-top: 5px;
+                width: 80%;
+            }
+        }
+    }
+
+    .noselect {
+        user-select: none;
+    }
+
+    .dimensions {
+        margin-top: -20px;
+        background-color: $gold10;
+
+        .teasertext {
+            padding-top: 20px;
+            font: $findermodalteasertextfont;
+            margin-bottom: 0px;
+        letter-spacing: 0.05em;
+
+            p {
+                float: left;
+            }
+
+            .sexselect {
+                display: block;
+                position: relative;
+                float: left;
+                margin: 0 10px;
+                padding: 0 7px 0 7px;
+            width: 117px;
+
+                border-bottom: 2px dotted $gold100;
+
+                &:hover,
+                &.open {
+                    .dropdown {
+                        display: block;
+                        opacity: 1;
+                        top: 20px;
+
+                    ul {
+                        background-color: white;
+
+                        li a {
+                            color: $gold100;
+                        }
+                    }
+                    }
+                }
+            }
+
+            .quantity {
+                box-sizing: border-box;
+                float: left;
+                padding: 0 5px;
+                text-align: center;
+
+                input {
+                    display: block;
+                    width: 40px;
+                    outline: none;
+                    border: none;
+                    border-bottom: 2px dotted $gold100;
+                    background: none;
+                    text-align: center;
+                    font: $contentfont;
+                    height: 24px;
+                }
+            }
+
+            .special {
+                margin-top: 1px;
+                text-transform: uppercase;
+                color: $gold100;
+                font: $contentfont;
+            }
+
+            .sexagerow, .relationshiprow, .interestrow {
+                padding-left: 60px;
+                padding-right: 60px;
+                display: inline-block;
+            }
+
+            .minimal-slider {
+                height: 20px;
+                width: 220px;
+                margin: 2px 20px;
+                background-color: $gold25;
+                border: none;
+                border-radius: 20px;
+
+                .minimal-slider-thumb {
+                    background-color: $blue100;
+                    width: 20px;
+                    height: 20px;
+                    left: 0px;
+                    position: relative;
+                    border-radius: 10px;
+                    vertical-align: middle;
+                    cursor: pointer;
+                }
+            }
+
+            input[type=number]::-webkit-inner-spin-button,
+            input[type=number]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type='number'] {
+                -moz-appearance:textfield;
+            }
+        }
+    }
+
+    .finder-circle {
+        cursor: pointer;
+
+        &.pulsate {
+            transform-origin: center center;
+            animation-duration: 2s;
+            animation-name: pulsate;
+        }
+
+        &.off {
+            fill: $gray10;
+        }
+    }
+
+    @keyframes pulsate {
+      33% {
+        transform: scale(4);
+      }
+    }
+
+    .recommendations {
+        color: $gold100;
+    }
+
+.productcontainer {
+    .inset {
+        background-color: white;
+
+        .productsrow {
+            overflow-y: hidden;
+
+            .previous,
+            .next {
+                width: 40px;
+                height: 150px;
+                position: absolute;
+                padding-left: 20px;
+                margin-left: -20px;
+                padding-top: 130px;
+                z-index: 20;
+                background-color: white;
+                float: left;
+                cursor: pointer;
+
+                &.notclickable {
+                    color: $gray10;
+                    cursor: auto;
+                }
+
+                &:before {
+                    $size = 40px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: $size;
+                    margin-top: - ($size / 2);
+                    font-size: $size;
+                }
+            }
+
+            .next {
+                left: $fullsize - 40px;
+            }
+
+        width: 988px;
+            .products {
+                width: $fullsize - 120px;
+                overflow: hidden;
+                margin: 20px 0px 0px 40px;
+                height: 300px;
+                overflow-x: auto;
+                position: relative;
+                float: left;
+
+                .product {
+                    width: 230px;
+                    position: absolute;
+                    height: 280px;
+                    //-webkit-transform: translate3d(0,0,0);
+                    transition:all ease-in-out 0.8s;
+
+                    .image {
+                        min-height: 200px;
+                    }
+                }
+
+                .badgeflagtext {
+                    color: white;
+                    position: absolute;
+                    z-index: 20;
+                    text-align: center;
+                    width: 20px;
+                    font: $findermodalflagfont;
+                }
+
+                .badgefirsthit {
+                    margin-left: 25px;
+                    position: absolute;
+                    text-transform: uppercase;
+                    font: $findermodalflagfont;
+                    letter-spacing: 0.1em;
+                    z-index: 5;
+                }
+
+                .badge_flag .image:after {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url('../../assets/img/badge_flag.svg') !important;
+                }
+            }
+            }
+        }
+    }
+
+    .missmprow {
+        background-color: $blue10;
+
+        .inset {
+            background-color: $blue10;
+        }
+    }
+
+    .inset:before {
+        margin: 0 0;
+        padding: 0 0;
+    }
+}
