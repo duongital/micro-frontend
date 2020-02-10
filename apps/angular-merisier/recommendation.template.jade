@@ -1,37 +1,38 @@
 #businessrecommendations.HQ.stage
+    h1 {{title}}
     .tile.hidemobile(data-ng-init="showHints = true;")
         .row.titlerow.blue(data-ng-click="showHints = !showHints;")
             .col.span3
                 .titleicon.icon-cube
-                span.title {{ {de: "Miss Moneypenny sagt...", en: "Miss Moneypenny says..." } | i18n }}
+                //- span.title {{ {de: "Miss Moneypenny sagt...", en: "Miss Moneypenny says..." } | i18n }}
                 .actionicon.red.icon-close(data-ng-show="showHints")
-                span.buttontext.red.hidemobile(data-ng-show="showHints") {{ {de: "Zuklappen", en: "Hide" } | i18n }}
+                //- span.buttontext.red.hidemobile(data-ng-show="showHints") {{ {de: "Zuklappen", en: "Hide" } | i18n }}
                 .actionicon.red.icon-add(data-ng-show="!showHints")
-                span.buttontext.red.hidemobile(data-ng-show="!showHints") {{ {de: "Aufklappen", en: "Show" } | i18n }}
+                //- span.buttontext.red.hidemobile(data-ng-show="!showHints") {{ {de: "Aufklappen", en: "Show" } | i18n }}
         -var tiles = [];
         -tiles.push({img:"img/moneypenny_300.gif", title: "Auf die richtigen Informationen kommt es an!", content: "'**MISS MONEYPENNY** ist die Geschenkexpertin bei Merisier. Sie ist die berühmteste Sekretärin der Welt, arbeitet unermüdlich, behält immer den Überblick, ist tough und hat gleichzeitig ein sensibles Händchen. Niemand geringeres als Miss Moneypenny selbst findet in den MI-Headquarters für Sie nicht nur das passende, sondern das absolut perfekte Geschenk.'"}),
         -tiles.push({img:"img/moneypenny_300.gif", title: "Ich weiß was alle wissen. Alle zusammen!", content: "'**MISS MONEYPENNY** lernt aus Erfahrung. Täglich suchen und finden Menschen mit ihrer Hilfe Geschenke, die zu Personen mit spezifischen Eigenschaften passen. MISS MONEYPENNY kombiniert die kollektive Einschätzung all ihrer Nutzer zu einem ausdifferenzierten Wissen, das sie als Grundlage für ihre Empfehlungen nutzt, auswertet und ständig erweitert. So wird sie täglich raffinierter.'"}),
-        //-stages.push({mp4: "", webm: "", img: "img/teaser_advent_de_144.jpg", title: "Wer nicht will, der hat schon", content: "'**Olé Olé!** Für alle, die nach dem Spiel wissen, wie’s besser gelaufen wär - für diejenigen, die immer alle einladen …'"})
+        
         .inset
             .insetcontent.slideUpDown(data-ng-show="showHints")
                 .tileslider.blue(data-original-tiles=tiles, style="position: relative; overflow: hidden;", data-third='true')
     .tile.augments(data-ng-init="showAugments = false;")
         .row.contentrow.white
             .col.span3
-                .maintitle {{ {de: "Persönliches Geschenk für...", en: "Personal present for..."} | i18n }}
+                //- .maintitle {{ {de: "Persönliches Geschenk für...", en: "Personal present for..."} | i18n }}
                 div#augment_name(angucomplete-alt placeholder="Name oder Email" pause="100" selected-object="selectContact" local-data="user.addresses" search-fields="FirstName,LastName,Email" title-field="FirstName,LastName" minlength="1", text-no-results="Leider keinen Kontakt gefunden.")
-                .teasertext.left(style="margin-top: 60px;") {{ {de: "Fügen Sie Informationen über eine Person hinzu und finden Sie das passende Geschenk.", en: "Enter information about a person and find the appropiate gift."} | i18n}}
+                //- .teasertext.left(style="margin-top: 60px;") {{ {de: "Fügen Sie Informationen über eine Person hinzu und finden Sie das passende Geschenk.", en: "Enter information about a person and find the appropiate gift."} | i18n}}
         #orders(data-ng-if="currentOrders")
             .row.titlerow.white
                 .col.span3
                     .titleicon.icon-cube
-                    span.title {{ {de: "Bestellungen", en: "My orders" } | i18n }}
+                    //- span.title {{ {de: "Bestellungen", en: "My orders" } | i18n }}
             .row.headerrow.white.hidemobile(data-ng-if="currentOrders.length > 0")
                 .col.medium33
-                    span {{ {de: "Geschenk", en: "Gift" } | i18n }}
+                    //- span {{ {de: "Geschenk", en: "Gift" } | i18n }}
                 .col.medium33
-                    span.giftee {{ {de: "Für", en: "For" } | i18n }}
-                    span.date {{ {de: "Datum", en: "Date" } | i18n }}
+                    //- span.giftee {{ {de: "Für", en: "For" } | i18n }}
+                    //- span.date {{ {de: "Datum", en: "Date" } | i18n }}
                 .col.medium33
                     span.status {{ "Status" }}
             .order(bindonce="o" data-ng-repeat="o in currentOrders | orderBy:'-Created'", data-ng-init="orderIndex = $index; user.showAllOrders = false;", data-ng-class="{'hidden': $index > 2 && !user.showAllOrders}")
@@ -52,35 +53,35 @@
                         .date(data-bo-html="o.Created | date:'dd.MM.yyyy'")
                     .col.medium33(data-bo-hide="$index > 0")
                         .status(data-bo-class="o.Status", data-bo-html="o.Status | status")
-                        a.status(data-bo-if="o.Status === 'ok'" data-bo-href-i="http://nolp.dhl.de/nextt-online-public/set_identcodes.do?idc={{o._embedded.Shipments[0].TrackingID}}" 
+                        //- a.status(data-bo-if="o.Status === 'ok'" data-bo-href-i="http://nolp.dhl.de/nextt-online-public/set_identcodes.do?idc={{o._embedded.Shipments[0].TrackingID}}" 
                             target="_blank" data-bo-html="{de: 'DHL-Tracking', en: 'DHL tracking'} | i18n")
             .row.white(data-ng-if="user.orders.length > 3")
                 .col.span3.actions.wide
-                    button.mainaction.blue(type="button", data-ng-click="user.showAllOrders = !user.showAllOrders;") {{ user.showAllOrders ? {de: "Weniger anzeigen", en: "Show less"} : {de: "Alle anzeigen", en: "Show all"} | i18n }}
+                    //- button.mainaction.blue(type="button", data-ng-click="user.showAllOrders = !user.showAllOrders;") {{ user.showAllOrders ? {de: "Weniger anzeigen", en: "Show less"} : {de: "Alle anzeigen", en: "Show all"} | i18n }}
         .row.titlerow.white(data-ng-click="toggleAugments();")
             .col.span3
                 .titleicon.icon-augment
-                span.title {{ {de: "Infos aus dem Netz", en: "Infos from the net" } | i18n }}
-                span.subtitle {{ {de: "Zeigen Sie frei verfügbare Informationen aus dem Internet an", en: "Display freely available information from the internet" } | i18n }}
+                //- span.title {{ {de: "Infos aus dem Netz", en: "Infos from the net" } | i18n }}
+                //- span.subtitle {{ {de: "Zeigen Sie frei verfügbare Informationen aus dem Internet an", en: "Display freely available information from the internet" } | i18n }}
                 .actionicon.icon-down(data-ng-show="!showAugments")
                 .actionicon.icon-up(data-ng-show="showAugments")
         .inset
             .insetcontent.slideUpDown(data-ng-show="showAugments")
                 .row.contentrow.white
                     .col.span3
-                        .text {{ {de: "Sehen Sie, welche Informationen die Person im Internet teilt, welche sozialen Netzwerke sie nutzt und lernen Sie sie ein wenig besser kennen. Geben Sie dazu die Email-Adresse ein.", en: "See which information the person shares with the internet, which social networks they use and get them know a little bit better. Please enter therefore the email address."} | i18n}}
+                        //- .text {{ {de: "Sehen Sie, welche Informationen die Person im Internet teilt, welche sozialen Netzwerke sie nutzt und lernen Sie sie ein wenig besser kennen. Geben Sie dazu die Email-Adresse ein.", en: "See which information the person shares with the internet, which social networks they use and get them know a little bit better. Please enter therefore the email address."} | i18n}}
                 .row.contentrow.white.quarter
                     .col.span2.form
                         input#augment_email(data-ng-model="augmentParams.email" type="email" name="augment_email" placeholder="Email")
                     .col
                         .actions.left
-                            button.mainaction.small(type="button", data-ng-click="augment();") {{ {de: "Finden", en: "Find"} | i18n }}
+                            //- button.mainaction.small(type="button", data-ng-click="augment();") {{ {de: "Finden", en: "Find"} | i18n }}
                 .row.contentrow.white(data-ng-if="augmentNotFound && isEmpty(currentAugment)")
                     .col.medium33
                         img(src="img/moneypenny_300.gif")
                     .col.span2
-                        h2.left {{ {de: "Interessant!", en: "Interesting!"} | i18n }}
-                        .teasertext.left.bio {{ {de: "Unter der Email-Adresse", en: ""} | i18n }} {{augmentParams.email}} {{ {de: "finde ich derzeit keine weiteren öffentlichen Daten. Die Person verhält sich entweder im Netz sehr diskret oder nutzt zumindest mit dieser Adresse keine sozialen Netzwerke. Um mehr über sie zu erfahren müssen Sie mit ihr Kontakt aufnehmen.", en: "" } | i18n }}
+                        //- h2.left {{ {de: "Interessant!", en: "Interesting!"} | i18n }}
+                        //- .teasertext.left.bio {{ {de: "Unter der Email-Adresse", en: ""} | i18n }} {{augmentParams.email}} {{ {de: "finde ich derzeit keine weiteren öffentlichen Daten. Die Person verhält sich entweder im Netz sehr diskret oder nutzt zumindest mit dieser Adresse keine sozialen Netzwerke. Um mehr über sie zu erfahren müssen Sie mit ihr Kontakt aufnehmen.", en: "" } | i18n }}
                 .row.contentrow.white(data-ng-if="!isEmpty(currentAugment)")
                     .col.medium33
                         img(data-ng-src="{{currentAugment._embedded.Data.avatar}}")
@@ -88,16 +89,16 @@
                         h2.left {{ currentAugment._embedded.Data.name.fullName }}
                         .teasertext.left.bio {{ currentAugment._embedded.Data.bio }}
                         .minirow
-                            span.title {{ {de: "Position", en: "Position"} | i18n }}
-                            span.text {{ currentAugment._embedded.Data.employment.title || {de: "Unbekannt", en: "unknown"} | i18n }}
+                            //- span.title {{ {de: "Position", en: "Position"} | i18n }}
+                            //- span.text {{ currentAugment._embedded.Data.employment.title || {de: "Unbekannt", en: "unknown"} | i18n }}
                         .minirow
-                            span.title {{ {de: "Unternehmen", en: "Company"} | i18n }}
-                            span.text {{ currentAugment._embedded.Data.employment.name || {de: "Unbekannt", en: "unknown"} | i18n }}
+                            //- span.title {{ {de: "Unternehmen", en: "Company"} | i18n }}
+                            //- span.text {{ currentAugment._embedded.Data.employment.name || {de: "Unbekannt", en: "unknown"} | i18n }}
                         .minirow(data-ng-if="currentAugment._embedded.Data.location")
-                            span.title {{ {de: "Ort", en: "Location"} | i18n }}
+                            //- span.title {{ {de: "Ort", en: "Location"} | i18n }}
                             span.text {{currentAugment._embedded.Data.location}}
                         .minirow(data-ng-if="currentAugment._embedded.Data.site")
-                            span.title {{ {de: "Homgepage", en: "Homepage"} | i18n }}
+                            //- span.title {{ {de: "Homgepage", en: "Homepage"} | i18n }}
                             a(data-ng-if="currentAugment._embedded.Data.site", href="{{currentAugment._embedded.Data.site}}" target="_blank" style="color: #1e5a6e") {{currentAugment._embedded.Data.site}}
                         div(data-ng-if="currentAugment.socialProfiles")
                             br
@@ -132,34 +133,34 @@
         .row.titlerow.white(style="cursor: auto;")
             .col.span3
                 .titleicon.icon-finder
-                span.title {{ {de: "Miss Moneypenny", en: "Miss Moneypenny" } | i18n }}
-                span.subtitle {{ {de: "Sagen Sie Miss Moneypenny, was sie über die Person wissen", en: "Tell Miss Moneypenny what you know about the person" } | i18n }}
+                //- span.title {{ {de: "Miss Moneypenny", en: "Miss Moneypenny" } | i18n }}
+                //- span.subtitle {{ {de: "Sagen Sie Miss Moneypenny, was sie über die Person wissen", en: "Tell Miss Moneypenny what you know about the person" } | i18n }}
         .row.contentrow.white
             .col.span3
-                .text {{ {de: "Wie funktioniert’s? Verändere die Größe der Kreise durch Ziehen. Groß ist viel, klein ist wenig. Alles klar?", en: "How does it work? Change the size of the circles by dragging. Big is much, small is few. Everything clear?"} | i18n}}
+                //- .text {{ {de: "Wie funktioniert’s? Verändere die Größe der Kreise durch Ziehen. Groß ist viel, klein ist wenig. Alles klar?", en: "How does it work? Change the size of the circles by dragging. Big is much, small is few. Everything clear?"} | i18n}}
         .finder
             .dimensions
                 .teasertext.noselect
                     .sexagerow
-                        p {{ {de: "Ich suche ein Geschenk für", en: "I'm looking for a present for"} | i18n }}
+                        //- p {{ {de: "Ich suche ein Geschenk für", en: "I'm looking for a present for"} | i18n }}
                         .sexselect.special
                             .pulldown(data-current="business.sexselection", data-ng-init="business.sexselection = 'eine Frau'", data-links="{'eine Frau': true, 'einen Mann': false}", data-click-handler="changeSex(value)", data-type="finderSexSelector")
-                        p {{ {de: "im Alter von", en: "with an age of"} | i18n }}
+                        //- p {{ {de: "im Alter von", en: "with an age of"} | i18n }}
                         .quantity.special
                             .form: input(type="number" data-ng-model="business.finder.age" data-ng-change="business.finder.update_dimensions('age', business.finder.age)", data-ng-click="business.finder.age=null;")
-                        p {{ {de: "Jahren.", en: "years."} | i18n }}
+                        //- p {{ {de: "Jahren.", en: "years."} | i18n }}
                     .relationshiprow
-                        p {{ {de: "Unser Verhältnis ist ", en: "Our relationship is "} | i18n }}
-                        p.special(style="margin-left:10px;") {{ {de: "sehr eng", en: "very narrow "} | i18n }}
+                        //- p {{ {de: "Unser Verhältnis ist ", en: "Our relationship is "} | i18n }}
+                        //- p.special(style="margin-left:10px;") {{ {de: "sehr eng", en: "very narrow "} | i18n }}
                         div(style="float:left;")
                             minimal-slider(data-model="business.relation", data-dragend="business.finder.update_dimensions('relation',business.relation*100)")
-                        p.special {{ {de: "ziemlich lose", en: "quite loose"} | i18n }}
+                        //- p.special {{ {de: "ziemlich lose", en: "quite loose"} | i18n }}
                     .interestrow(style="margin-top:10px;")
-                        p {{ {de: "Außerdem hat sie folgende Eigenschaften:", en: "Moreover she has following attributes:"} | i18n }}
+                        //- p {{ {de: "Außerdem hat sie folgende Eigenschaften:", en: "Moreover she has following attributes:"} | i18n }}
                 .interestcircles(data-dimensions="business.dimensions", data-contwidth="1020", data-contheight="300", data-draggable="true")
                 .teasertext.noselect(style="padding-bottom: 60px; margin-top: -100px; ")
-                    .special {{ {de: "Verändere die Größe der Kreise durch Klicken und Ziehen", en: "Change the size of the circles by clicking and dragging"} | i18n }}
+                    //- .special {{ {de: "Verändere die Größe der Kreise durch Klicken und Ziehen", en: "Change the size of the circles by clicking and dragging"} | i18n }}
             .productslider.white(data-ng-if="showProducts" data-products="business.finder.products", data-order="Rank" data-image-use="main", data-title="{de: 'Empfehlungen', en: 'Recommendations'}", data-reload="business.finder.reload", data-show-badges="true", data-route="businessproduct", data-type="finder", data-show-always="true")
         .row.contentrow
             .col.span3.actions.wide
-                button.mainaction.blue(type="button") {{ {de: "Profil speichern", en: "Save profile"} | i18n }}
+                //- button.mainaction.blue(type="button") {{ {de: "Profil speichern", en: "Save profile"} | i18n }}
