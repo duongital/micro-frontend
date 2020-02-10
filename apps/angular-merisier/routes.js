@@ -1,5 +1,7 @@
 import angular from "angular";
-import "./root.component.js";
+
+import "./recommendation.component.js";
+import "./konto.component.js";
 
 angular.module("merisier").config([
   "$stateProvider",
@@ -10,9 +12,14 @@ angular.module("merisier").config([
       requireBase: false
     });
 
-    $stateProvider.state("root", {
-      url: "/merisier",
-      template: "<root />"
-    });
+    $stateProvider
+      .state("root", {
+        url: "/recommendation",
+        template: "<recommendation />"
+      })
+      .state("root2", {
+        url: "/konto",
+        template: "<konto />"
+      });
   }
 ]);

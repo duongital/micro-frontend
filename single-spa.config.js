@@ -22,7 +22,7 @@ registerApplication(
 registerApplication(
   "mihq",
   () => import("./apps/angular-merisier/angular.app.js"),
-  () => location.pathname.includes('merisier')
+  () => location.pathname.includes('recommendation') || location.pathname.includes('konto')
 )
 
 start();
