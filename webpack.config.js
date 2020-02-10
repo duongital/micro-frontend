@@ -47,6 +47,58 @@ config = {
       {
         test: /\.jade/,
         use: ["raw-loader", "pug-html-loader"]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader" // translates CSS into CommonJS
+          },
+          {
+            loader: "stylus-loader", // compiles Stylus to CSS
+            options: {
+              use: [require('nib')()],
+              import: ['~nib/lib/nib/index.styl']
+            }
+          }
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader" // creates style nodes from JS strings
+          },
+          {
+            loader: "css-loader" // translates CSS into CommonJS
+          },
+          {
+            loader: "less-loader", // compiles Stylus to CSS
+          }
+        ]
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+          }
+        }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|ico)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'img/',
+          }
+        }
       }
     ]
   },

@@ -9,6 +9,11 @@ import angular from 'angular';
 import './app.module.js';
 import './routes.js';
 
+require('../css/merisier.styl');
+require('../css/merisier.minimal.styl');
+require('../css/tooltip.less');
+require('../css/loading-bar.styl');
+
 const domElementGetter = () => document.getElementById('mihq');
 
 const angularLifecycles = singleSpaAngularJS({
