@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.7.9",
+    "angular": "^1.8.0",
     "angular-ui-router": "^1.0.25",
     "axios": "^0.19.1",
     "merisier-web-component": "git://github.com/duongital/merisier-web-component.git#eaf3567f3daff80b74cd550c93719f689677ffbf",
