@@ -6,7 +6,7 @@
   "dependencies": {
     "angular": "^1.8.0",
     "angular-ui-router": "^1.0.25",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "merisier-web-component": "git://github.com/duongital/merisier-web-component.git#eaf3567f3daff80b74cd550c93719f689677ffbf",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
